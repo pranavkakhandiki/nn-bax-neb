@@ -1,0 +1,222 @@
+# -----------------------------
+# Project configuration (ML/NEB)
+# Choose ONE `traj:` block by uncommenting it.
+# All other knobs live inside that `traj` block,
+# except: equi_checkpoint, input_file, BAX_iters, do_lowest_fmax.
+# -----------------------------
+
+# ---- Global (NOT under traj) ----
+equi_checkpoint: "/sdf/group/mli/pranav/pretrained_models/eqV2_153M_omat.pt"
+#equi_checkpoint: "/sdf/group/mli/pranav/pretrained_models/eqV2_31M_omat.pt"
+#equi_checkpoint: "/sdf/group/mli/pranav/pretrained_models/esen_30m_omat.pt"
+#equi_checkpoint: "/sdf/group/mli/pranav/pretrained_models/gnoc_oc22_oc20_all_s2ef.pt"
+
+input_file: "config_lj7_BAX.yml"
+#input_file: "config_BAX_eSEN.yml"
+#input_file: config_smallEqV2.yml
+#input_file: config_dimeNet.yml
+#input_file: config_gemNet.yml
+
+
+BAX_iters: 500
+do_lowest_fmax: true
+
+set_tags: false #only true for GemNet
+
+#For random sampling method
+random_sample_method: true
+delta_var: 0.2
+
+# =========================================================
+# ---- TRAJECTORY (choose ONE by uncommenting the block) --
+# =========================================================
+
+# traj:
+#   name: "ELJ7_0to5"
+#   traj_dir: "/sdf/group/mli/pranav/local_minima_test.traj"
+#   initial_traj_num: 0
+#   final_traj_num: 5
+#   N_LJ: 7
+#   NEB_system: "LJ"
+#   # Per-traj NEB controls
+#   n_images: 20
+#   fmax_thresh: 0.1
+#   neb_steps: 200
+#   remove_rot: true
+#   neb_method: "string"
+#   apply_constraint: false
+
+# traj:
+#   name: "SHLJ7_0to2"
+#   traj_dir: "5_23_LJ7_3minima_02.traj"
+#   initial_traj_num: 0
+#   final_traj_num: 2
+#   N_LJ: 7
+#   NEB_system: "LJ"
+#   n_images: 30
+#   fmax_thresh: 0.1
+#   neb_steps: 200
+#   remove_rot: true
+#   neb_method: "string"
+#   apply_constraint: false
+
+traj:
+  name: "ELJ38_1to0"
+  traj_dir: "simple_LJ38.traj"
+  initial_traj_num: 1
+  final_traj_num: 0
+  N_LJ: 38
+  NEB_system: "LJ"
+  n_images: 20
+  fmax_thresh: 0.1
+  neb_steps: 200
+  remove_rot: true
+  neb_method: "string"
+  apply_constraint: false
+
+# traj:
+#   name: "NHLJ38_0to4"
+#   traj_dir: "7_29_LJ38_oneShallowMin_20img_0to4_fmax=0p3.traj"
+#   initial_traj_num: 0
+#   final_traj_num: 4
+#   N_LJ: 38
+#   NEB_system: "LJ"
+#   n_images: 20
+#   fmax_thresh: 0.1
+#   neb_steps: 200
+#   remove_rot: true
+#   neb_method: "string"
+#   apply_constraint: false
+
+
+# traj:
+#   name: "LJ7_long_0to19"
+#   traj_dir: "/sdf/group/mli/pranav/lj7_paths/one_min_thresh_fmax_0.08.traj"
+#   initial_traj_num: 0
+#   final_traj_num: 19
+#   N_LJ: 7
+#   NEB_system: "LJ"
+#   n_images: 20
+#   fmax_thresh: 0.1
+#   neb_steps: 200
+#   remove_rot: false
+#   neb_method: "aseneb"
+#   apply_constraint: true
+
+# --- Parts of LJ38 transition (stitching) ---
+
+# traj:
+#   name: "LJ38_6to8"
+#   traj_dir: "9_12_6to8_FullLJ38_55NEB_fmax=0p05_20img_0to1.traj"
+#   initial_traj_num: 0
+#   final_traj_num: 1
+#   N_LJ: 38
+#   NEB_system: "LJ"
+#   n_images: 20
+#   fmax_thresh: 0.1
+#   neb_steps: 200
+#   remove_rot: false
+#   neb_method: "aseneb"
+#   apply_constraint: true
+
+# traj:
+#   name: "LJ38_8to10"
+#   traj_dir: "9_12_8to10_FullLJ38_620NEB_fmax=0p1_20img_0to1.traj"
+#   initial_traj_num: 0
+#   final_traj_num: 1
+#   N_LJ: 38
+#   NEB_system: "LJ"
+#   n_images: 20
+#   fmax_thresh: 0.1
+#   neb_steps: 200
+#   remove_rot: false
+#   neb_method: "aseneb"
+#   apply_constraint: true
+
+# traj:
+#   name: "LJ38_10to12"
+#   traj_dir: "8_7_10to12_FullLJ38_50NEB_fmax=0p25_20img_0to1.traj"
+#   initial_traj_num: 0
+#   final_traj_num: 1
+#   N_LJ: 38
+#   NEB_system: "LJ"
+#   n_images: 20
+#   fmax_thresh: 0.1
+#   neb_steps: 200
+#   remove_rot: false
+#   neb_method: "aseneb"
+#   apply_constraint: true
+
+# traj:
+#   name: "LJ38_12to14"
+#   traj_dir: "8_7_12to14_FullLJ38_40NEB_fmax=0p45_20img_0to1.traj"
+#   initial_traj_num: 0
+#   final_traj_num: 1
+#   N_LJ: 38
+#   NEB_system: "LJ"
+#   n_images: 20
+#   fmax_thresh: 0.1
+#   neb_steps: 200
+#   remove_rot: false
+#   neb_method: "aseneb"
+#   apply_constraint: true
+
+# traj:
+#   name: "LJ38_14to16"
+#   traj_dir: "8_7_14to16_FullLJ38_60NEB_fmax=0p05_20img_0to1.traj"
+#   initial_traj_num: 0
+#   final_traj_num: 1
+#   N_LJ: 38
+#   NEB_system: "LJ"
+#   n_images: 20
+#   fmax_thresh: 0.1
+#   neb_steps: 200
+#   remove_rot: false
+#   neb_method: "aseneb"
+#   apply_constraint: true
+
+# --- Cu/EAM variants ---
+
+# traj:
+#   name: "Cu38_dimerHop"
+#   traj_dir: "10_2_Cu38_dimerHop.traj"
+#   initial_traj_num: 0
+#   final_traj_num: 1
+#   N_LJ: 38
+#   NEB_system: "EAM"
+#   n_images: 20
+#   fmax_thresh: 0.1
+#   neb_steps: 200
+#   remove_rot: false
+#   neb_method: "aseneb"
+#   apply_constraint: true
+
+# traj:
+#   name: "Cu38_dimerHop_new"   # <-- ACTIVE
+#   traj_dir: "10_14_Cu38_dimerHop_new.traj"
+#   initial_traj_num: 0
+#   final_traj_num: 1
+#   N_LJ: 38
+#   NEB_system: "EAM"
+#   n_images: 20
+#   fmax_thresh: 0.1
+#   neb_steps: 200
+#   remove_rot: false
+#   neb_method: "aseneb"
+#   apply_constraint: true
+
+
+# traj:
+#   name: "ELJ7_0to5_gemNet"
+#   traj_dir: "10_27_gemNet_ELJ7.traj"
+#   initial_traj_num: 0
+#   final_traj_num: 1
+#   N_LJ: 7
+#   NEB_system: "LJ"
+#   # Per-traj NEB controls
+#   n_images: 20
+#   fmax_thresh: 0.1
+#   neb_steps: 200
+#   remove_rot: true
+#   neb_method: "string"
+#   apply_constraint: false
