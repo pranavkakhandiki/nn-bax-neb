@@ -19,6 +19,3 @@ This repository includes example analysis workflows for evaluating NN-BAX result
 
 For complex transitions involving multiple intermediate minima, this repository includes an implementation of **Foundation-BAX** in `foundation_bax.py`. Foundation-BAX extends NN-BAX to multi-step pathways by reusing the fine-tuned model from one sub-transition as the initialization for the next. This enables information learned from earlier transitions to be transferred across related pathways, further reducing the total number of required simulations and improving convergence for segmented or long transition paths.
 
-## Scope
-
-This repository is intended as a research-oriented reference implementation of NN-BAX. While the example systems included here use Lennard-Jones and Embedded Atom Method potentials, the methodology is system-agnostic and is designed to extend to higher-fidelity simulations and more complex atomistic systems.
