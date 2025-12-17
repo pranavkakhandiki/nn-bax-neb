@@ -1,4 +1,4 @@
-# nn-bax-neb
+# Efficient Nudged Elastic Band Method using Neural Network Bayesian Algorithm Execution
 Nudged Elastic Band (NEB) with Neural Network Bayesian Algorithm Execution (NN-BAX)
 
 This repository contains an implementation of **Neural Network Bayesian Algorithm Execution (NN-BAX)** for accelerating **nudged elastic band (NEB)** calculations in atomistic systems. NN-BAX is an algorithm-aware active learning framework that combines Bayesian Algorithm Execution with large, symmetry-aware neural network force fields to efficiently discover minimum energy pathways (MEPs) between metastable states. By actively selecting training points that directly improve the NEB solution, NN-BAX significantly reduces the number of expensive energy and force evaluations required by classical NEB while preserving the accuracy of the resulting transition pathways.
