@@ -8,7 +8,7 @@ This repository contains an implementation of **Neural Network Bayesian Algorith
 The code in this repository demonstrates NN-BAX on both **Lennard-Jones (LJ)** cluster transitions and **Embedded Atom Method (EAM)** surface diffusion transitions. These systems span a range of dimensionalities and physical complexity, from well-studied LJ test cases to many-body metallic diffusion processes, and serve as controlled benchmarks for evaluating the efficiency and robustness of the method.
 
 ## Running NN-BAX
-
+Docker image used for paper results can be installed via: `docker pull seangaz/fair-chem:v1.10.0`
 The main entry point for running NN-BAX is the file `nn_bax.py`. This script executes the full NN-BAX loop, including initialization of a pretrained foundation model, running NEB using the neural network surrogate, acquiring targeted samples from the predicted pathway using BAX, and iteratively fine-tuning the model until convergence criteria are met.
 
 In typical usage, `nn_bax.py` is executed as a batch job on an HPC system using SLURM. The provided script `neb_job.sh` can be used to submit NN-BAX runs via `sbatch` and handles resource allocation and job configuration.
